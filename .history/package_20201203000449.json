@@ -10,13 +10,14 @@
   "dependencies": {
     "axios": "^0.21.0",
     "element-plus": "^1.0.1-beta.2",
-    "element-ui": "^2.3.6",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-alpha.6",
     "vuex": "^4.0.0-alpha.1"
   },
   "devDependencies": {
+    
+   
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
@@ -28,7 +29,6 @@
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "typescript": "~3.9.3",
-    "vue-cli-plugin-element-ui": "~1.1.4",
     "vue-cli-plugin-vue-next": "~0.1.4"
   }
 }
