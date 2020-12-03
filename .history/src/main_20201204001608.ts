@@ -5,7 +5,7 @@ import store from './store'
 import 'element-plus/lib/theme-chalk/index.css';
 import {ElButton,ElMessage,ElForm,ElFormItem,ElInput,ElDropdown,ElDropdownItem,
     ElContainer,ElMain,ElTable,ElHeader,ElTableColumn,ElAside,ElDropdownMenu
- ,ElMenu,ElMenuItemGroup,ElSubmenu,ElMenuItem,ElAvatar
+ ,ElMenu,ElMenuItemGroup
 } from 'element-plus'
 const app : any = createApp(App)
 app.use(store).use(router).mount('#app');
@@ -24,9 +24,6 @@ app.component(ElAside.name, ElAside);
 app.component(ElDropdownMenu.name, ElDropdownMenu);
 app.component(ElMenu.name, ElMenu);
 app.component(ElMenuItemGroup.name, ElMenuItemGroup);
-app.component(ElSubmenu.name, ElSubmenu);
-app.component(ElMenuItem.name, ElMenuItem);
-app.component(ElAvatar.name, ElAvatar);
 
 
 app.use(ElMessage);
