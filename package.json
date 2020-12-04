@@ -13,6 +13,7 @@
     "element-ui": "^2.3.6",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
+    "vue-property-decorator": "^9.1.2",
     "vue-router": "^4.0.0-alpha.6",
     "vuex": "^4.0.0-alpha.1"
   },
@@ -27,8 +28,10 @@
     "babel-plugin-component": "^1.1.1",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "style-resources-loader": "^1.4.1",
     "typescript": "~3.9.3",
     "vue-cli-plugin-element-ui": "~1.1.4",
+    "vue-cli-plugin-style-resources-loader": "^0.1.4",
     "vue-cli-plugin-vue-next": "~0.1.4"
   }
 }

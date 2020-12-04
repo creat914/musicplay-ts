@@ -1,14 +1,17 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import login from '../views/Login/login.vue'
+import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
 
+const login = () => import("../views/Login/login.vue")
+const Home = () => import("../views/Admin/Home.vue")
 const routes: Array<RouteRecordRaw> = [
   {
-    path:'/',
-    redirect:"/login"
+    path: '/',
+    component: Home,
+    name: "首页"
   },
   {
-     path:'/login',
-     component:login
+    path: '/login',
+    component: login,
+    name: "登录"
   }
 ]
 

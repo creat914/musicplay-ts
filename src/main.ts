@@ -3,13 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import 'element-plus/lib/theme-chalk/index.css';
-import {ElButton,ElMessage,ElForm,ElFormItem,ElInput} from 'element-plus'
+import "../music.less";
+import ElementPlus from 'element-plus';
 const app : any = createApp(App)
-app.use(store).use(router).mount('#app');
-app.component(ElButton.name, ElButton);
-app.component(ElForm.name, ElForm);
-app.component(ElFormItem.name, ElFormItem);
-app.component(ElInput.name, ElInput);
-
-
-app.use(ElMessage);
+app.use(store).use(router).use(ElementPlus).mount('#app');
