@@ -1,7 +1,7 @@
 <template>
   <el-container id="container">
     <el-aside width="auto" class="aside">
-      <asideLayout :isCollapse="isCollapse" :showAdminTitle="showAdminTitle" ref="asideLayoutRef"></asideLayout>
+      <asideLayout :isCollapse="isCollapse" :showAdminTitle="showAdminTitle" ref="asideLayoutRef" :menuRoutes="menuRoutes"></asideLayout>
     </el-aside>
     <el-container>
       <el-header class="header">
@@ -29,26 +29,36 @@
   </el-container>
 </template>
 <script lang="ts">
-  import {ref, Ref, onMounted, onUnmounted, watch, defineComponent} from 'vue'
+  import {toRefs, Ref, onMounted, onUnmounted, watch, defineComponent,reactive} from 'vue'
   import asideLayout from '@/components/asideLayout/asideLayout.vue';
   import headerLayout from '@/components/headerLayout/headerLayout.vue'
+  import {IchildMenu} from '@/utils/interface'
+  import {menuRoutes} from '@/router/menu-routes'
+  interface IReactive{
+    isCollapse:Boolean,
+    showAdminTitle:Boolean,
+    menuRoutes?:Array<IchildMenu>
+  }
   export default defineComponent({
     components: {
       asideLayout,
       headerLayout
     },
     setup() {
-      let isCollapse: Ref<Boolean> = ref(false);
-      let showAdminTitle: Ref<Boolean> = ref(false);
+      let data:IReactive = reactive({
+        isCollapse:false,
+        showAdminTitle:false,
+        menuRoutes:menuRoutes
+      })
       const triggerMenu = () => {
-        isCollapse.value = !isCollapse.value;
+        data.isCollapse = !data.isCollapse;
       }
       const getWindowWidth = () => {
         let clientWidth = document.body.clientWidth;
         if (clientWidth < 1100) {
-          isCollapse.value = true;
+          data.isCollapse = true;
         } else {
-          isCollapse.value = false;
+          data.isCollapse = false;
         }
       }
       onMounted(() => {
@@ -57,20 +67,22 @@
       onUnmounted(() => {
         window.removeEventListener("resize", getWindowWidth);
       })
-      watch(isCollapse, (nv: Ref<Boolean>, ov: Ref<Boolean>) => {
+
+      watch(()=>data.isCollapse,(nv: Boolean, ov: Boolean) => {
+        console.log("----")
         if (!nv) {
           setTimeout(() => {
-            showAdminTitle.value = false;
+            data.showAdminTitle = false;
           }, 400);
         } else {
-          showAdminTitle.value = true;
+          data.showAdminTitle = true;
         }
       });
 
       return {
-        isCollapse,
+        ...toRefs(data),
         triggerMenu,
-        showAdminTitle
+
       }
     }
   });
