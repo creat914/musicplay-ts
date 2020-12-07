@@ -117,7 +117,7 @@ export default defineComponent({
           }
         }
         let currentTime: number = +audioPlay.value.currentTime.toFixed(2);
-        if (musicProgress.value === lycTimeList.value.length) {
+        if (musicProgress.value === lycTimeList.value.length-1) {
           musicProgress.value = 0;
           (scrollView.value as Element).scrollTop = 0;
 
