@@ -1,5 +1,5 @@
 export interface IchildMenu{
-  name: string,
-  path: string,
+  name: String,
+  path: String,
   children?:Array<IchildMenu>
 }

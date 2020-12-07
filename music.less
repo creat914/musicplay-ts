@@ -1,2 +1,32 @@
 @themeColor:#5e81f4;
 @themeMoreColor:#456ae4 !important;
+@detailColor:#5e81f4;
+
+body,html{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+.delColor{
+   color:#e44545;
+}
+.detailColor{
+    color:@themeColor;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.fixCenter{
+     position: absolute;
+     top:50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+}

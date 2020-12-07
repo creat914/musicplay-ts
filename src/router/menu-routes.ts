@@ -5,5 +5,8 @@ export const menuRoutes: Array<IchildMenu> = [{
   children: [{
     path: '/SingerManger',
     name: "歌手管理"
+  },{
+    path: '/SongManger',
+    name: "歌曲管理"
   }]
 }];
